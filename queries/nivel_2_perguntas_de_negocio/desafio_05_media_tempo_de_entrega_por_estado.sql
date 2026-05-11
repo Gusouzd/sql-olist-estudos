@@ -1,3 +1,7 @@
+-- Desafio 5
+-- Quanto tempo em média (em dias) leva entre a compra e a entrega
+-- por estado do cliente? Ordena do mais lento pro mais rápido.
+
 WITH estado AS (
 	SELECT 
 		c.customer_state,
