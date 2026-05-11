@@ -68,13 +68,13 @@ sql-olist-estudos/
 |---|-----------|---------|--------|
 | 04 | Categoria com maior taxa de avaliação negativa (score ≤ 2) | `JOIN`, `CASE WHEN` | ✅ Resolvido |
 | 05 | Tempo médio de entrega em dias por estado do cliente | `AVG`, datas | ✅ Resolvido |
-| 06 | Percentual de pedidos atrasados por mês | `CASE WHEN`, `DATE_TRUNC` | 🔄 Em andamento |
+| 06 | Percentual de pedidos atrasados por mês | `CASE WHEN`, `DATE_TRUNC` | ✅ Resolvido |
 
 ### Nível 3 — Consultas Complexas
 
 | # | Descrição | Funções | Status |
 |---|-----------|---------|--------|
-| 07 | Classificação de clientes: novo, recorrente ou fiel | `CTE`, `CASE WHEN` | ⏳ Pendente |
+| 07 | Classificação de clientes: novo, recorrente ou fiel | `CTE`, `CASE WHEN` | 🔄 Em andamento |
 | 08 | Receita acumulada mês a mês em 2017 | `SUM() OVER` | ⏳ Pendente |
 | 09 | Ranking de vendedores por índice receita × nota média (top 10) | `CTE`, múltiplos `JOIN` | ⏳ Pendente |
 
@@ -82,9 +82,9 @@ sql-olist-estudos/
 
 ## 📈 Progresso
 
-![Resolvidos](https://img.shields.io/badge/Resolvidos-5%2F9-4CAF50)
+![Resolvidos](https://img.shields.io/badge/Resolvidos-6%2F9-4CAF50)
 ![Em andamento](https://img.shields.io/badge/Em%20andamento-1%2F9-FFA726)
-![Pendentes](https://img.shields.io/badge/Pendentes-3%2F9-9E9E9E)
+![Pendentes](https://img.shields.io/badge/Pendentes-2%2F9-9E9E9E)
 
 ---
 
