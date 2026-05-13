@@ -75,16 +75,16 @@ sql-olist-estudos/
 | # | Descrição | Funções | Status |
 |---|-----------|---------|--------|
 | 07 | Classificação de clientes: novo, recorrente ou fiel | `CTE`, `CASE WHEN` | ✅ Resolvido |
-| 08 | Receita acumulada mês a mês em 2017 | `SUM() OVER` | 🔄 Em andamento |
-| 09 | Ranking de vendedores por índice receita × nota média (top 10) | `CTE`, múltiplos `JOIN` | ⏳ Pendente |
+| 08 | Receita acumulada mês a mês em 2017 | `SUM() OVER` | ✅ Resolvido |
+| 09 | Ranking de vendedores por índice receita × nota média (top 10) | `CTE`, múltiplos `JOIN` | 🔄 Em andamento |
 
 ---
 
 ## 📈 Progresso
 
-![Resolvidos](https://img.shields.io/badge/Resolvidos-7%2F9-4CAF50)
+![Resolvidos](https://img.shields.io/badge/Resolvidos-8%2F9-4CAF50)
 ![Em andamento](https://img.shields.io/badge/Em%20andamento-1%2F9-FFA726)
-![Pendentes](https://img.shields.io/badge/Pendentes-1%2F9-9E9E9E)
+![Pendentes](https://img.shields.io/badge/Pendentes-0%2F9-9E9E9E)
 
 ---
 
