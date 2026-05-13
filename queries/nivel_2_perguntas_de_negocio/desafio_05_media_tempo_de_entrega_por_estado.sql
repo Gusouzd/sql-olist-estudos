@@ -1,6 +1,9 @@
--- Desafio 5
--- Quanto tempo em média (em dias) leva entre a compra e a entrega
--- por estado do cliente? Ordena do mais lento pro mais rápido.
+-- Desafio 05 — Tempo médio de entrega em dias por estado do cliente (do mais lento ao mais rápido)
+-- Técnica: subtração direta entre timestamps + DATE_PART para extrair dias + AVG para média por estado
+-- Lógica: subtrai order_purchase_timestamp de order_delivered_customer_date → extrai a parte em dias
+--         → agrupa por estado e calcula média arredondada
+-- Detalhe: subtração entre timestamps no PostgreSQL retorna um interval — DATE_PART extrai os dias desse interval
+-- Dataset: Olist | PostgreSQL
 
 WITH estado AS (
 	SELECT 

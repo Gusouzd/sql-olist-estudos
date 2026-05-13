@@ -1,6 +1,9 @@
--- Desafio 3
--- Numere os pedidos de cada cliente em ordem cronológica.
--- Mostre só os clientes que fizeram mais de 1 pedido.
+-- Desafio 03 — Numeração cronológica de pedidos por cliente (apenas clientes com mais de 1 pedido)
+-- Técnica: COUNT() OVER para filtrar antes + RANK() OVER para numerar cronologicamente
+-- Lógica: JOIN entre orders e customers para obter customer_unique_id → conta pedidos por cliente via window
+--         → filtra total > 1 na CTE intermediária → aplica RANK() por ordem de compra
+-- Detalhe: usa customer_unique_id (não customer_id) para identificar o cliente real entre múltiplos registros
+-- Dataset: Olist | PostgreSQL
 
 WITH contagem_compras AS (
 	SELECT 

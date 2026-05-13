@@ -1,6 +1,8 @@
--- Desafio 2
--- Para cada mês, mostre a receita total e a receita do mês anterior.
--- Calcule a variação percentual entre os dois.
+-- Desafio 02 — Receita mensal com variação percentual em relação ao mês anterior
+-- Técnica: DATE_TRUNC para agrupar por mês + LAG() para buscar valor do mês anterior
+-- Lógica: agrupa receita por mês → aplica LAG na mesma query para calcular variação percentual
+-- Detalhe: LAG() é chamada duas vezes na mesma CTE para evitar subquery extra
+-- Dataset: Olist | PostgreSQL
 
 WITH receita_mensal AS (
     SELECT

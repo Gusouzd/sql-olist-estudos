@@ -1,6 +1,9 @@
--- Desafio 4
--- Qual categoria de produto tem a maior taxa de avaliação negativa?
--- (considere negativa: review_score <= 2)
+-- Desafio 04 — Categoria de produto com maior taxa de avaliação negativa (score <= 2)
+-- Técnica: CASE WHEN para classificar avaliação + divisão agregada para calcular percentual
+-- Lógica: JOIN entre order_items, products e order_reviews → marca cada avaliação como negativa (1) ou não (0)
+--         → agrupa por categoria e calcula taxa = soma negativas / total de avaliações
+-- Detalhe: cast ::NUMERIC necessário para o ROUND funcionar corretamente na divisão inteira
+-- Dataset: Olist | PostgreSQL
 
 WITH base AS (
     SELECT 

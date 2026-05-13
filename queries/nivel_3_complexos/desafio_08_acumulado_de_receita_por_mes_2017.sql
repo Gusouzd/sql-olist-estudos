@@ -1,5 +1,9 @@
--- Desafio 8
--- Mostra a evolução da receita acumulada mês a mês ao longo de 2017.
+-- Desafio 08 — Evolução da receita acumulada mês a mês ao longo de 2017
+-- Técnica: SUM() OVER (ORDER BY mes) — window function de acumulado (running total)
+-- Lógica: filtra pedidos de 2017 → formata mês como YYYY-MM com TO_CHAR → agrega receita mensal
+--         → aplica SUM acumulada ordenada pelo mês na query final
+-- Detalhe: TO_CHAR retorna texto, mas a ordenação funciona corretamente no formato YYYY-MM por ser lexicográfica
+-- Dataset: Olist | PostgreSQL
 
 WITH filtro AS (
 	SELECT 

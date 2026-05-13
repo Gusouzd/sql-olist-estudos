@@ -1,6 +1,9 @@
--- Desafio 6
--- Qual o percentual de pedidos atrasados por mês?
--- (atrasado = entregue depois do prazo estimado)
+-- Desafio 06 — Percentual de pedidos atrasados por mês
+-- Técnica: CASE WHEN comparando datas + DATE_TRUNC para agrupar por mês + divisão agregada para percentual
+-- Lógica: filtra só pedidos entregues (status = 'delivered') → marca atraso quando data real > prazo estimado
+--         → agrupa por mês e calcula percentual de atrasos sobre total de entregas
+-- Detalhe: multiplicar por 100.0 (não 100) garante divisão decimal e evita resultado truncado em inteiro
+-- Dataset: Olist | PostgreSQL
 
 WITH base AS (
     SELECT 

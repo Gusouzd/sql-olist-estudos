@@ -1,7 +1,10 @@
--- Desafio 9
--- Para cada vendedor, calcula: total de pedidos, receita total,
--- ticket médio, e nota média das avaliações. Rankeia pelo
--- índice: (receita_total * nota_media). Mostra top 10.
+-- Desafio 09 — Ranking de vendedores pelo índice (receita_total × nota_média) — top 10
+-- Técnica: múltiplos JOINs + 3 CTEs encadeadas + DENSE_RANK() para ranking sem lacunas
+-- Lógica: une order_items com order_reviews por order_id → agrega por vendedor calculando total de pedidos,
+--         receita total, ticket médio e nota média → calcula índice e aplica DENSE_RANK → filtra top 10
+-- Detalhe: HAVING AVG(avaliacao) IS NOT NULL exclui vendedores sem nenhuma avaliação registrada
+--          DENSE_RANK ao invés de RANK evita lacunas no ranking quando há empate no índice
+-- Dataset: Olist | PostgreSQL
 
 WITH informacoes AS (
 	SELECT 

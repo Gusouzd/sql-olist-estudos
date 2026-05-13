@@ -1,7 +1,10 @@
--- Desafio 7
--- Classifica cada cliente em: novo (1 pedido), recorrente (2-4 pedidos)
--- ou fiel (5+ pedidos). Mostra quantos clientes em cada categoria
--- e a receita média por categoria.
+-- Desafio 07 — Classificação de clientes em novo, recorrente ou fiel + receita média por categoria
+-- Técnica: 3 CTEs encadeadas + CASE WHEN para classificação + COUNT DISTINCT para pedidos únicos
+-- Lógica: monta base com order_id, customer_unique_id e valor pago → agrega por cliente contando pedidos
+--         e somando receita → classifica por volume → agrupa por categoria para contagem e média
+-- Detalhe: LEFT JOIN com order_payments para não perder pedidos sem pagamento registrado
+--          COUNT(DISTINCT order_id) evita duplicação quando há múltiplas formas de pagamento no mesmo pedido
+-- Dataset: Olist | PostgreSQL
 
 WITH inicial AS (
 	SELECT

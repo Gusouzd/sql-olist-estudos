@@ -1,6 +1,8 @@
--- Desafio 1 
--- Rankeia os vendedores por receita total dentro de cada estado. 
--- Mostre só os 3 primeiros de cada estado. 
+-- Desafio 01 — Ranking de vendedores por receita dentro de cada estado
+-- Técnica: 3 CTEs encadeadas + RANK() com PARTITION BY seller_state
+-- Lógica: calcula receita por vendedor → enriquece com estado via JOIN → rankeia por estado → filtra top 3
+-- Detalhe: receita = price + freight_value (produto + frete)
+-- Dataset: Olist | PostgreSQL
 
 WITH receita_por_vendedor AS (
     SELECT 
