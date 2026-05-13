@@ -4,7 +4,6 @@
 -- e a receita média por categoria.
 
 WITH inicial AS (
-	
 	SELECT
 		o.order_id,
         c.customer_unique_id,
@@ -12,18 +11,16 @@ WITH inicial AS (
     FROM orders o
     LEFT JOIN order_payments op ON o.order_id = op.order_id
     INNER JOIN customers c ON o.customer_id = c.customer_id
-
-), contagem AS (
-
+), 
+contagem AS (
 	SELECT 
 		customer_unique_id,
 		COUNT(DISTINCT order_id) AS total_pedidos,
 		SUM(payment_value) AS valor_total
 	FROM inicial
-	GROUP BY customer_unique_id
-	
-), classificacao AS (
-
+	GROUP BY customer_unique_id	
+), 
+classificacao AS (
 	SELECT 
 		*,
 		CASE WHEN total_pedidos = 1 THEN 'Novo'
@@ -31,7 +28,6 @@ WITH inicial AS (
 		ELSE 'Fiel' END AS classes
 	FROM contagem
 )
-
 SELECT 
 	classes,
 	COUNT(*) AS total_por_categoria,
